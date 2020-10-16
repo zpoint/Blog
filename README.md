@@ -1,5 +1,7 @@
 tech blog/learning path/source code analyze
 
+* [简体中文](https://github.com/zpoint/Blog/blob/master/README_CN.md)
+
 # source code
 
 * [Python/CPython-Internals](https://github.com/zpoint/CPython-Internals)
