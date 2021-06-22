@@ -22,7 +22,8 @@ Network
 
 * [v2ray openvpn netflix](https://gist.github.com/zpoint/df2483c6beb97816e34ddbde3f62f5d8)
 
+<!--
 面试
-
 * [Tencent/Covariant AI(2019-09)](https://github.com/zpoint/Blog/blob/master/Interview/202009.md)
+-->
 
