@@ -18,6 +18,7 @@ ElasticSearch
 Web
 
 * [sanic singleton and unittest](https://gist.github.com/zpoint/c44c80155e335108b38ce8bc1374dc44)	
+* [django gunicorn gevent greenlet daphne What are they?](https://github.com/zpoint/Blog/blob/master/Python/django.md)	
 
 Network
 
