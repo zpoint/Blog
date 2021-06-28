@@ -1,4 +1,5 @@
-# django gunicorn gevent greenlet daphne 他们是什么?
+# django gunicorn gevent greenlet daphne 他们是什么?![image title](http://www.zpoint.xyz:8080/count/tag.svg?url=github%2FBlog%2FPython%2Fdjango%2Fdjango_cn.md)
+
 
 # 第一篇 django 和 gunicorn
 

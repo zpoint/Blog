@@ -1,4 +1,5 @@
-tech blog/learning path/source code analyze
+tech blog/learning path/source code analyze![image title](http://www.zpoint.xyz:8080/count/tag.svg?url=github%2FBlog)
+
 
 * [简体中文](https://github.com/zpoint/Blog/blob/master/README_CN.md)
 
