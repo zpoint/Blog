@@ -13,7 +13,7 @@
 
 ## django
 
-你打开 [Django](https://github.com/django/django) 的官方网站
+我们打开 [Django](https://github.com/django/django) 的官方网站
 
 > Django 是一个更贴近应用层的 Python Web 框架, 鼓快在其之上对应用快速迭代, 和清晰实用的应用设计
 
@@ -115,7 +115,7 @@ gunicorn --workers 2 mysite.wsgi
 
 主进程调用 `listen` 方法绑定了默认的地址和端口 `127.0.0.1:8000` , 之后通过系统调用 `fork` 生成两个 worker(子进程)
 
-每一个 worker 都会加载 `mysite/wsgi.py` 并寻找名为 `application` 的实例, `django` 默认创建好的实例是从这个位置进行导入生成的  `from django.core.wsgi import get_wsgi_application`, 它实现了 `WSGI` 接口, 所以  `gunicorn` 可以怼它进行加载并调用对应的方法处理每一个请求
+每一个 worker 都会加载 `mysite/wsgi.py` 并寻找名为 `application` 的实例, `django` 默认创建好的实例是从这个位置进行导入生成的  `from django.core.wsgi import get_wsgi_application`, 它实现了 `WSGI` 接口, 所以  `gunicorn` 可以对它进行加载并调用对应的方法处理每一个请求
 
 ![django_example](./django_example.png)
 
