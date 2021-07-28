@@ -17,7 +17,7 @@ Web
 
 * [sanic 全局单例化及单元测试](https://blog.csdn.net/qq_31720329/article/details/107995010)	
 * [django gunicorn gevent greenlet daphne 他们是什么?](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)	
-* [第一篇 django 和 gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)
+  * [第一篇 django 和 gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)
 
 Network
 
