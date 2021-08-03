@@ -1,10 +1,10 @@
 # gunicorn workers
 
-We've learned `SyncWorker` for gunicorn in [part1](https://github.com/zpoint/Blog/blob/master/Python/django/django.md), now let's see how other workers work
+我们在 [第一篇](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md) 里已经了解过 gunicorn 的 `SyncWorker` 原理, 现在我们来看下其他的 workers 是如何工作的
 
 ![workers](./workers.png)
 
-# contents
+# 目录
 
 * [eventlet](#Eventlet)
 * [gevent](#Gevent)
@@ -14,15 +14,15 @@ We've learned `SyncWorker` for gunicorn in [part1](https://github.com/zpoint/Blo
 
 ## Eventlet
 
-If you visite the official site of [eventlet](https://eventlet.net/)
+如果你打开 [eventlet](https://eventlet.net/) 的官网
 
-> Eventlet is a concurrent networking library for Python that allows you to change how you run your code, not how you write it.
+> Eventlet 是一个 Python 网络库, 支持并发访问, 使用这个库可以在不改变代码写法的情况下更改代码的运行方式
 >
-> - It uses epoll or kqueue or libevent for [highly scalable non-blocking I/O](http://en.wikipedia.org/wiki/Asynchronous_I/O#Select.28.2Fpoll.29_loops).
-> - [Coroutines](http://en.wikipedia.org/wiki/Coroutine) ensure that the developer uses a blocking style of programming that is similar to threading, but provide the benefits of non-blocking I/O.
-> - The event dispatch is implicit, which means you can easily use Eventlet from the Python interpreter, or as a small part of a larger application.
+> * 它使用了 epoll/kqueue/libevent , 这样可以支持 [可扩展的非阻塞式 I/O](http://en.wikipedia.org/wiki/Asynchronous_I/O#Select.28.2Fpoll.29_loops)
+> * [协程](http://en.wikipedia.org/wiki/Coroutine)  的支持可以让开发者像使用线程一样编写顺序性代码, 但是运行时又提供了非阻塞IO的运行方式
+> * 对于事件的派发/回调是集成在库中的, 开发者不需要关注这部分逻辑, 所以你可以很方便地在 Python 解释器中使用 Eventlet, 或者在一个大型应用的一个模块中使用
 
-`EventletWorker` inherit from `AsyncWorker`, it override the `init_process` method and `run` method
+`EventletWorker` 继承自 `AsyncWorker`, 它覆写了 `init_process` 方法和 `run` 方法
 
 ```python3
 def patch(self):
@@ -35,7 +35,7 @@ def init_process(self):
     super().init_process()
 ```
 
-After `fork` from the master process, the `init_process` calls `eventlet.monkey_patch()`  , which replace the following modules by the corresponding `eventlet` support module by default
+在从主进程 `fork` 之后, `init_process` 方法会调用 `eventlet.monkey_patch()`  , 这个方法会默认把下面的模块替换成 `eventlet` 提供的对应的模块
 
 ```python3
 for name, modules_function in [
@@ -50,15 +50,15 @@ for name, modules_function in [
 ]
 ```
 
-Eventlet replaced the default IO module by it's `green` module, when you calls the `socket` function, you are actually calling `_green_socket_modules`  , which implements nonblocking IO
+Eventlet 把默认的 IO 模块替换成自己的模块, 当你调用 `socket` 方法时, 你实际上调用的是实现了非阻塞式IO的`_green_socket_modules`模块中的方法
 
-On every `socket` read/write, or `time.sleep`, it actually save the current context and add the current gthread to the pooling list, and then calls pool to wait for next ready IO event
+对于每一个 `socket` 的读写操作, 或者 `time.sleep` 操作, 实际上 `eventlet` 把当前的上下文保存起来, 并把当前的 `gthread` 加到等待列表种, 之后调用 pool 去等待下一个可读/可写的 IO 事件 
 
-It's like the `async` keyword in python3, but with less code invasion
+整体的调用流程和 python3 中的 `async` 方法类似, 但是这种方式几乎没有代码入侵
 
 
 
-If you run your app in eventlet mode
+如果你用 `eventlet` 模式运行你的应用
 
 ```python3
 gunicorn --workers 2 --worker-class eventlet mysite.wsgi

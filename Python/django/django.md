@@ -1,6 +1,4 @@
-# django gunicorn gevent greenlet daphne What are they? ![image title](http://www.zpoint.xyz:8080/count/tag.svg?url=github%2FBlog%2FPython%2Fdjango%2Fdjango.md)
-
-# Part1 django and gunicorn
+# django and gunicorn ![image title](http://www.zpoint.xyz:8080/count/tag.svg?url=github%2FBlog%2FPython%2Fdjango%2Fdjango.md)
 
 If you've written Python web application, you will find a dozen of server framework and deployment components on the Internet
 
