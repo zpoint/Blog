@@ -15,9 +15,10 @@ ElasticSearch
 
 Web
 
+* [django 和 gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)
+* [gunicorn workers 区别 (sync/eventlet/gevent/thread/tornado)](https://github.com/zpoint/Blog/blob/master/Python/django/gunicorn_cn.md)
+
 * [sanic 全局单例化及单元测试](https://blog.csdn.net/qq_31720329/article/details/107995010)	
-* [django gunicorn gevent greenlet daphne 他们是什么?](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)	
-  * [第一篇 django 和 gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django_cn.md)
 
 Network
 
@@ -25,6 +26,7 @@ Network
 
 <!--
 面试
+
 * [Tencent/Covariant AI(2019-09)](https://github.com/zpoint/Blog/blob/master/Interview/202009.md)
 -->
 

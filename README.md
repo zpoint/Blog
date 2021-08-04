@@ -18,9 +18,11 @@ ElasticSearch
 
 Web
 
+* [django and gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django.md)
+
+* [difference between gunicorn workers (sync/eventlet/gevent/thread/tornado)](https://github.com/zpoint/Blog/blob/master/Python/django/gunicorn.md)
+
 * [sanic singleton and unittest](https://gist.github.com/zpoint/c44c80155e335108b38ce8bc1374dc44)	
-* [django gunicorn gevent greenlet daphne What are they?](https://github.com/zpoint/Blog/blob/master/Python/django/django.md)	
-  * [Part1 django and gunicorn](https://github.com/zpoint/Blog/blob/master/Python/django/django.md)
 
 Network
 
