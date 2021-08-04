@@ -1,4 +1,4 @@
-# gunicorn workers
+# gunicorn workers![image title](http://www.zpoint.xyz:8080/count/tag.svg?url=github%2FBlog%2FPython%2Fdjango%2Fgunicorn.md)
 
 We've learned `SyncWorker` for gunicorn in [part1](https://github.com/zpoint/Blog/blob/master/Python/django/django.md), now let's see how other workers work
 
@@ -9,8 +9,8 @@ We've learned `SyncWorker` for gunicorn in [part1](https://github.com/zpoint/Blo
 * [eventlet](#Eventlet)
 * [gevent](#Gevent)
 * [thread](#thread)
-
 * [tornado](#tornado)
+* [read more](#read-more)
 
 ## Eventlet
 
@@ -68,9 +68,7 @@ gunicorn --workers 2 --worker-class eventlet mysite.wsgi
 
 `EventletWorker` will spawn a new `gthread`, which in charge of accept connection from socket, after accept a new connection from socket, the `gthread` pass the django handle function to the `greenpool`, and use the `greenpool` to start the django function
 
-Thanks for `eventlet`, we can simply change `--worker-class` to make our django application blocking IO to nonblocking 
-
-IO
+Thanks for `eventlet`, we can simply change `--worker-class` to make our django application blocking IO to nonblocking IO
 
 Compare to define `async` function directly, your code can run both in blocking and nonblocking mode, and easier to debug
 
