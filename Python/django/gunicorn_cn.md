@@ -193,7 +193,7 @@ def run(self):
 我们来看一个示例
 
 ```bash
-gunicorn --workers 1 --worker-class gthread --threads 2 mysite.wsgi
+gunicorn --workers 1 --worker-class gevent --threads 2 mysite.wsgi
 ```
 
 这个 `--threads` 参数只会影响到 `gthread` worker class, 其他的 worker 是不受这个参数影响的

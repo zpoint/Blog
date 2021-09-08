@@ -139,7 +139,7 @@ def run(self):
 If you run
 
 ```bash
-gunicorn --workers 2 --worker-class eventlet mysite.wsgi
+gunicorn --workers 2 --worker-class gevent mysite.wsgi
 ```
 
 ![gevent](./gevent.png)
